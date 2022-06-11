@@ -1,7 +1,9 @@
 import React from "react";
+import { useHMSActions } from "@100mslive/react-sdk";
 
 const Timer = ()=>{
 
+    const hmsActions = useHMSActions();
     const [sec, setSec] = React.useState(0);
     const [min, setMin] = React.useState(0);
     const [hr, setHr] = React.useState(0);
@@ -15,6 +17,10 @@ const Timer = ()=>{
     
             setSec(sec+1);
 
+            // if(sec ===10){
+            //     hmsActions.leave();
+            // }
+         
             if(sec === 59){
                 setMin(min+1);
                 setSec(0);
@@ -31,6 +37,8 @@ const Timer = ()=>{
         }
 
     });
+
+
 
     const formatTime = (time) => {
         return String(time).padStart(2, '0')

@@ -1,5 +1,6 @@
 import { useAVToggle } from "@100mslive/react-sdk";
 import { useHMSActions } from "@100mslive/react-sdk";
+import { BsMicMute,BsMic, BsCameraVideo, BsCameraVideoOff } from "react-icons/bs";
 
 function Footer() {
     const hmsActions = useHMSActions();
@@ -21,15 +22,15 @@ function Footer() {
 
   return (
     <div className="control-bar">
-      <button className="btn-control" onClick={toggleAudio}>
-        {isLocalAudioEnabled ? "Mute" : "Unmute"}
-      </button>
+      <span className="icons" onClick={toggleAudio}>
+        {isLocalAudioEnabled ? <BsMic size={'2.4em'} /> : <BsMicMute  size={'2.4em'}/>}
+      </span>
       {/* <button className="btn-control" onClick={shareScreen}>
-            Screen Share
+            Chat
       </button> */}
-      <button className="btn-control" onClick={toggleVideo}>
-        {isLocalVideoEnabled ? "Hide" : "Unhide"}
-      </button>
+      <span className="icons" onClick={toggleVideo}>
+        {isLocalVideoEnabled ? <BsCameraVideoOff  size={'2.4em'}/> : <BsCameraVideo size={'2.4em'}/>}
+      </span>
     </div>
   );
 }

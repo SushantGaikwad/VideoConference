@@ -20,10 +20,8 @@ function JoinForm() {
     e.preventDefault();
     let token;
 
-    if(inputValues.token === "SushantHost"){
+    if(inputValues.token === "SushantMeeting"){
         token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2Nlc3Nfa2V5IjoiNjJhNGEyMTIyNjMwMjIxYzc1YTQzNGNjIiwicm9vbV9pZCI6IjYyYTRhMzE5Yjg3Mzc4N2FhMjcwOGVhZiIsInVzZXJfaWQiOiJtb3Bqb2xscSIsInJvbGUiOiJob3N0IiwianRpIjoiMWU0YTEwOTItNTUyZi00MTllLWJlNjktY2UyZTFiMzhjMTU3IiwidHlwZSI6ImFwcCIsInZlcnNpb24iOjIsImV4cCI6MTY1NTA0MzM1Nn0.SpsybdwhXo4wJGXQ_7rgnoCsz_XGK2ODSRZb8bPI0AI"
-    }else if(inputValues.token === "SushantGuest"){
-        token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2Nlc3Nfa2V5IjoiNjJhNGEyMTIyNjMwMjIxYzc1YTQzNGNjIiwicm9vbV9pZCI6IjYyYTRhMzE5Yjg3Mzc4N2FhMjcwOGVhZiIsInVzZXJfaWQiOiJndGxub21jZiIsInJvbGUiOiJndWVzdCIsImp0aSI6IjE3YjIxNTY2LTMzN2QtNGFhOC1hZWZmLTUyZTI4NmMwN2U2YyIsInR5cGUiOiJhcHAiLCJ2ZXJzaW9uIjoyLCJleHAiOjE2NTUwNDgyNTF9.Un99Z3Om_KXTXC9kfZJ9PgCyBRl_Md73uHdwVAPSM9k";
     }
     else{
         alert("Wrong Passcode Entered")
