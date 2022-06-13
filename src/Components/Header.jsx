@@ -5,6 +5,8 @@ import {
   } from "@100mslive/react-sdk";
   import React from "react";
 import Timer from "./Timer";
+import "./JoinForm.css";
+
   
   function Header() {
     const isConnected = useHMSStore(selectIsConnectedToRoom);

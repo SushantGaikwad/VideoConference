@@ -1,5 +1,7 @@
 import { useVideo } from "@100mslive/react-sdk";
 import { useHMSStore, selectPeers,selectPeerScreenSharing,selectIsLocalScreenShared,selectScreenShareByPeerID } from '@100mslive/react-sdk';
+import "./JoinForm.css";
+
 
 function Peer({ peer }) {
 

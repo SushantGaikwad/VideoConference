@@ -21,7 +21,7 @@ function JoinForm() {
     let token;
 
     if(inputValues.token === "SushantMeeting"){
-        token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2Nlc3Nfa2V5IjoiNjJhNGEyMTIyNjMwMjIxYzc1YTQzNGNjIiwicm9vbV9pZCI6IjYyYTRhMzE5Yjg3Mzc4N2FhMjcwOGVhZiIsInVzZXJfaWQiOiJtb3Bqb2xscSIsInJvbGUiOiJob3N0IiwianRpIjoiMWU0YTEwOTItNTUyZi00MTllLWJlNjktY2UyZTFiMzhjMTU3IiwidHlwZSI6ImFwcCIsInZlcnNpb24iOjIsImV4cCI6MTY1NTA0MzM1Nn0.SpsybdwhXo4wJGXQ_7rgnoCsz_XGK2ODSRZb8bPI0AI"
+        token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2Nlc3Nfa2V5IjoiNjJhNGEyMTIyNjMwMjIxYzc1YTQzNGNjIiwicm9vbV9pZCI6IjYyYTRhMzE5Yjg3Mzc4N2FhMjcwOGVhZiIsInVzZXJfaWQiOiJlZWl3YmRiYSIsInJvbGUiOiJob3N0IiwianRpIjoiYjBkZTZiODgtZWFkOC00M2ViLTgxZTAtZTYwNjcwNGI2NjZmIiwidHlwZSI6ImFwcCIsInZlcnNpb24iOjIsImV4cCI6MTY1NTEyOTk4N30.SzlIrCzGSluaC9dpVJoj6P8J_wVvkwtGkCAFEAfiKCo"
     }
     else{
         alert("Wrong Passcode Entered")
