@@ -17,10 +17,27 @@ function Chat(props) {
     const allMessages = useHMSStore(selectHMSMessages); // get all messages
      
    React.useEffect(()=>{
+   props.trigger && msgendref.current.scrollIntoView();
+   let wrapper = document.querySelector("#wrapper");
+   let header = document.querySelector("#header");
 
-        
+    props.trigger && header.addEventListener("mousedown", ()=>{
+        header.classList.add(style.active)
+    header.addEventListener("mousemove",onDrag);
+   })
+   props.trigger && document.addEventListener("mouseup", ()=>{
+        header.classList.remove(style.active)
+    header.removeEventListener("mousemove",onDrag);
+   })
 
-   },[])
+   const onDrag = ({movementX, movementY})=>{
+    let getStyle = window.getComputedStyle(wrapper);
+    let left = parseInt(getStyle.left);
+    let top = parseInt(getStyle.top);
+    wrapper.style.left = `${left + movementX}px`;
+    wrapper.style.top = `${top + movementY}px`;
+  }
+   })
    
    
    React.useEffect(() => {
@@ -32,33 +49,10 @@ function Chat(props) {
         let msg = document.getElementById("input");
         let message = msg.value;
         msg.value = ""
-        hmsActions.sendBroadcastMessage(message); // yes it's that simple 😉
-        
+        hmsActions.sendBroadcastMessage(message); // This will send message to all 
     }
     };
-   allMessages.length && msgendref.current.scrollIntoView();
-
    
-   let wrapper = document.querySelector("#wrapper");
-   let header = document.querySelector("#header");
-
-    allMessages.length && header.addEventListener("mousedown", ()=>{
-        header.classList.add(style.active)
-    header.addEventListener("mousemove",onDrag);
-   })
-    allMessages.length && document.addEventListener("mouseup", ()=>{
-        header.classList.remove(style.active)
-    header.removeEventListener("mousemove",onDrag);
-   })
-
-   const onDrag = ({movementX, movementY})=>{
-
-    let getStyle = window.getComputedStyle(wrapper);
-    let left = parseInt(getStyle.left);
-    let top = parseInt(getStyle.top);
-    wrapper.style.left = `${left + movementX}px`;
-    wrapper.style.top = `${top + movementY}px`;
-  }
 
 
   document.addEventListener('keydown', keyDownHandler);
@@ -66,7 +60,7 @@ function Chat(props) {
     return () => {
       document.removeEventListener('keydown', keyDownHandler);
     };
-  }, [allMessages]);
+  }, []);
 
   
 
@@ -104,7 +98,7 @@ function Chat(props) {
             }
             <div ref={msgendref}></div>
         </div>
-
+            <span style={{textAlign:"left", display: "block"}}>Send to Everyone</span>
             <input type="text" placeholder='Type' className={style.chat_input} id="input" />                   
     
         </div>
